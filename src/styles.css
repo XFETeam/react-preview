@@ -6,3 +6,15 @@
   border: 2px solid #000;
   font-size: 2em;
 }
+
+.my-gallery a{
+  -webkit-tap-highlight-color: transparent;
+}
+.pswp__button--close{
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+.pswp__top-bar{
+  background: #00000000 !important;
+}

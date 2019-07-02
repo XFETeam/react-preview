@@ -57,5 +57,9 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "images-preview": "^0.1.10",
+    "photoswipe": "^4.1.3"
+  }
 }
