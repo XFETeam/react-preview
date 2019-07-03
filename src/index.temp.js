@@ -12,19 +12,19 @@ export default class ExampleComponent extends Component {
 
         {this.props.children}
 
-        {/*<div className="my-gallery">*/}
-        {/*  <figure>*/}
-        {/*    <a href="static/gallery_1.png" data-size="1523x908" style={{tapHighlightColor: 'transparent'}}>*/}
-        {/*      <img src="static/gallery_1_s.png" width={'250px'} />*/}
-        {/*    </a>*/}
-        {/*  </figure>*/}
+        <div className="my-gallery">
+          <figure>
+            <a href="static/gallery_1.png" data-size="1523x908" style={{tapHighlightColor: 'transparent'}}>
+              <img src="static/gallery_1_s.png" width={'250px'} />
+            </a>
+          </figure>
 
-        {/*  <figure>*/}
-        {/*    <a href="static/gallery_2.png" data-size="1520x978">*/}
-        {/*      <img src="static/gallery_2_s.png" width="250" />*/}
-        {/*    </a>*/}
-        {/*  </figure>*/}
-        {/*</div>*/}
+          <figure>
+            <a href="static/gallery_2.png" data-size="1520x978">
+              <img src="static/gallery_2_s.png" width="250" />
+            </a>
+          </figure>
+        </div>
 
         <div className='pswp' tabIndex='-1' role='dialog' aria-hidden='true'>
           <div className='pswp__bg' style={{opacity: 0}} />
@@ -76,26 +76,28 @@ export default class ExampleComponent extends Component {
   }
 
   browniuView() {
-    let images = [...document.querySelector('.react-preview').querySelectorAll('img[data-proto]')]
-    console.log(images)
-    let items = () => {
-      let box = []
-      images.map(image => {
-        box.push({
-          msrc: image.src,
-          src: image.getAttribute('data-proto'),
-          h: image.height * 3,
-          w: image.width * 3
-        })
-      })
-      return box
-    }
-    images.map(image => {
-      image.setAttribute('style', 'cursor: pointer')
+    [...document.querySelector('.react-preview').querySelectorAll('img[data-proto]')].map(dom => {
+      // console.log(dom)
+      // console.log(dom.height)
+      dom.setAttribute('style', 'cursor: pointer')
       // moni
+      let items = [{
+        msrc: 'static/gallery_1_s.png',
+        src: 'static/gallery_1.png',
+        h: 908,
+        w: 1523
+      },{
+        msrc: 'static/gallery_2_s.png',
+        src: 'static/gallery_2.png',
+        h: 908,
+        w: 1523
+      },]
+      let options = {}
       let pswpElement = document.querySelectorAll('.pswp')[0]
-      image.onclick = () => {
-        let gallery = new PhotoSwipe(pswpElement, PhotoSwipeUIDefault, items(), {})
+      dom.onclick = () => {
+        // openPhotoSwipe(1, galleryElements[0], true, true)
+        console.log('xixi')
+        let gallery = new PhotoSwipe(pswpElement, PhotoSwipeUIDefault, items, options)
         gallery.init()
       }
     })
@@ -288,8 +290,8 @@ export default class ExampleComponent extends Component {
 
         // Pass data to PhotoSwipe and initialize it
         console.log(pswpElement, items, options)
-        gallery = new PhotoSwipe(pswpElement, PhotoSwipeUIDefault, items, options)
-        gallery.init()
+        // gallery = new PhotoSwipe(pswpElement, PhotoSwipeUIDefault, items, options)
+        // gallery.init()
 
       }
 
