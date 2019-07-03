@@ -39,9 +39,9 @@ class Example extends Component {
 }
 ```
 
-## theory
+## Theory
 
-组件会寻找体内 jsx中具有特殊标记的`img`标签，提取其属性 `data-preview-proto`的链接组成图集，并为之绑定弹窗触发事件。因此，若要为已有`img`元素赋予弹窗预览的能力就需要添加 `data-preview-proto`属性，属性的值是图片的高分辨率版本的链接。
+组件会寻找体内 jsx中任意位置具有 `data-preview-proto`属性的`img`标签，提取其属性值（链接）组成图集，并为之绑定弹窗触发事件。因此，若要为已有`img`元素赋予弹窗预览的能力就需要添加 `data-preview-proto`属性，属性的值是图片的高分辨率版本的链接。
 
 ## Props
 
