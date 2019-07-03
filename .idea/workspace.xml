@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e28d6054-973c-4dc1-8920-ea8658b45baa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-preview/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-preview/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/example/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-preview/example/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/example/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-preview/example/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-preview/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-preview/src/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
-    </list>
+    <list default="true" id="e28d6054-973c-4dc1-8920-ea8658b45baa" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -51,8 +38,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="631">
-                <caret line="56" selection-start-line="56" selection-end-line="56" />
+              <first_editor>
+                <caret column="16" lean-forward="true" selection-start-column="16" selection-end-column="59" />
               </first_editor>
               <second_editor />
             </state>
@@ -223,13 +210,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39864000" />
+    <option name="totallyTimeSpent" value="40183000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1370" height="1440" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20088954" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20088954" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -243,7 +229,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.2592319" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.2592319" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -332,8 +318,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="631">
-            <caret line="56" selection-start-line="56" selection-end-line="56" />
+          <first_editor>
+            <caret column="16" lean-forward="true" selection-start-column="16" selection-end-column="59" />
           </first_editor>
           <second_editor />
         </state>
