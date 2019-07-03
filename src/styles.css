@@ -1,20 +1,45 @@
 /* add css styles here (optional) */
 
-.test {
-  display: inline-block;
-  margin: 2em auto;
-  border: 2px solid #000;
-  font-size: 2em;
-}
 
-.my-gallery a{
+.my-gallery a {
   -webkit-tap-highlight-color: transparent;
 }
-.pswp__button--close{
+
+.pswp__button--close {
+  display: inline-block;
   position: absolute;
-  right: 15px;
-  top: 15px;
+  height: 50px;
+  width: 50px;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  transform: rotate(45deg);
 }
-.pswp__top-bar{
+
+.pswp__button--close:before, .pswp__button--close:after {
+  display: inline-block;
+  content: '';
+  height: 40%;
+  width: 1px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pswp__button--close:after {
+  width: 40%;
+  height: 1px;
+}
+
+.pswp__top-bar {
   background: #00000000 !important;
+}
+.pswp__counter{
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: #fff;
+  font-size: 12px;
 }
