@@ -7,6 +7,17 @@ import 'photoswipe/dist/photoswipe.css'
 import './styles.css'
 
 export default class ExampleComponent extends Component {
+
+  static defaultProps = {
+    loop: false,
+    spacing: 0.12,
+    bgOpacity: 0.8,
+    showHideOpacity: true,
+    animationDuration: 300,
+    maxSpreadZoom: 2,
+    rate: 2
+  }
+
   constructor(props) {
     super(props)
     this.dom = document.createElement('div')
@@ -66,19 +77,7 @@ export default class ExampleComponent extends Component {
 
   componentDidMount() {
     this.initView()
-    // this.test()
   }
-
-  // async test() {
-  //   console.log('xixi')
-  //   console.log(await this.testSon())
-  // }
-  //
-  // testSon() {
-  //   return new Promise(resolve => setTimeout(() => {
-  //     resolve('haha')
-  //   }, 1000))
-  // }
 
   componentWillUnmount() {
     if (this.swiper) this.swiper.destroy()
@@ -97,22 +96,14 @@ export default class ExampleComponent extends Component {
   geneItem(images) {
     return Promise.all(
       images.map(async image => {
-        if (image.tagName.toLowerCase() === 'img') {
-          return {
-            msrc: image.src || image.getAttribute('data-preview-proto'),
-            src: image.getAttribute('data-preview-proto'),
-            h: image.height * 2,
-            w: image.width * 2
-          }
-        } else {
-          let msrc = image.getAttribute('data-preview-src') || image.getAttribute('data-preview-proto')
-          let bgSize = await this.getImgSize(msrc)
-          return {
-            msrc: msrc,
-            src: image.getAttribute('data-preview-proto'),
-            h: bgSize[0] * 2,
-            w: bgSize[1] * 2
-          }
+        let msrc = image.getAttribute('data-preview-src') || image.getAttribute('data-preview-proto')
+        if (image.tagName.toLowerCase() === 'img') msrc = image.src || image.getAttribute('data-preview-proto')
+        const bgSize = await this.getImgSize(msrc)
+        return {
+          msrc: msrc,
+          src: image.getAttribute('data-preview-proto'),
+          h: bgSize[0] * this.props.rate,
+          w: bgSize[1] * this.props.rate
         }
       })
     )
@@ -128,10 +119,15 @@ export default class ExampleComponent extends Component {
       image.onclick = (e) => {
         e.preventDefault ? e.preventDefault() : e.returnValue = false
         this.swiper = new PhotoSwipe(pswpElement, PhotoSwipeUIDefault, items, {
-          loop: false,
+          loop: this.props.loop,
+          spacing: this.props.spacing,
+          bgOpacity: this.props.bgOpacity,
+          showHideOpacity: this.props.showHideOpacity,
+          showAnimationDuration: this.props.animationDuration,
+          hideAnimationDuration: this.props.animationDuration,
+          maxSpreadZoom: this.props.maxSpreadZoom,
           index: index,
-          spacing: 0.12,
-          bgOpacity: 0.8,
+          history: false,
           getThumbBoundsFn: (index) => {
             let thumbnail = images[index]
             let pageYScroll = window.pageYOffset || document.documentElement.scrollTop

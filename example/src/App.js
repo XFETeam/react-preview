@@ -6,7 +6,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Preview gallery={'xixi'}>
+        <Preview loop={true} bgOpacity={0.95}>
           <div className="gallery">
             <img src="https://farm4.staticflickr.com/3894/15008518202_b016d7d289_m.jpg" data-preview-proto='https://farm4.staticflickr.com/3894/15008518202_c265dfa55f_h.jpg' alt='anything' />
             <br />
@@ -16,15 +16,8 @@ export default class App extends Component {
             </div>
           </div>
         </Preview>
-        <Preview gallery={'haha'}>
-          <div className="gallery">
-            <img src="https://farm4.staticflickr.com/3894/15008518202_b016d7d289_m.jpg" data-preview-proto='https://farm4.staticflickr.com/3894/15008518202_c265dfa55f_h.jpg' alt='anything' />
-            <br />
-            <img src="https://farm4.staticflickr.com/3920/15008465772_383e697089_m.jpg" data-preview-proto='https://farm4.staticflickr.com/3920/15008465772_d50c8f0531_h.jpg' alt='anything' />
-          </div>
-        </Preview>
-        <Preview gallery={'jiji'}>
-          <div className="bear" data-preview-proto='https://farm4.staticflickr.com/3894/15008518202_c265dfa55f_h.jpg' />
+        <Preview animationDuration={0}>
+          <div className="bear" data-preview-proto='static/lake_l.jpg' />
           <div className="mount" data-preview-proto='https://farm4.staticflickr.com/3920/15008465772_d50c8f0531_h.jpg' data-preview-src="https://farm4.staticflickr.com/3920/15008465772_383e697089_m.jpg" />
         </Preview>
       </div>

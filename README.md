@@ -64,11 +64,12 @@ class Example extends Component {
 
 | Name      | Description                | Defalt | Example   | Type        |
 | :-------- | -------------------------- | ------ | :-------- | :---------- |
-| `gallery` | 图集分组的ID               | ''     | gallery_1 | string      |
 | loop      | 是否允许图集循环           | false  | true      | boolean     |
 | bgOpacity | 背景透明度                 | 0.8    | 0.8       | number(0-1) |
 | spacing   | 图集间距                   | 0.12   | 0.12      | Number(0-1) |
-| preload   | 是否允许预加载高分辨率图片 | false  | true      | boolean     |
+| showHideOpacity   | 显示和关闭时是否开启透明渐变    | true   | false      | boolean |
+| animationDuration   |  从点击位置弹出的持续时间（设置为0时禁用）    | 300   | 0      | number(ms) |
+| maxSpreadZoom   |  双指缩放的最大比率   | 2   | 1      | number |
 | rate   | 高分辨率与预览图的比率 | 3  | 3      | number     |
 
 ## Events
