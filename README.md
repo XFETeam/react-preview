@@ -29,7 +29,7 @@ class Example extends Component {
       <div>
         <Preview>
           <div className="gallery">
-            <img src="image_m.jpg" alt='img' data-preview-proto='image_l.jpg' />
+            <img src="image_m.jpg" data-preview-proto='image_l.jpg' alt='img'/>
             <div data-preview-src="image_2_m.jpg" data-preview-proto='image_2_l.jpg' />
           </div>
         </Preview>
