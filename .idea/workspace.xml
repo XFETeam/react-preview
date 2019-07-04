@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e28d6054-973c-4dc1-8920-ea8658b45baa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-preview/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-    </list>
+    <list default="true" id="e28d6054-973c-4dc1-8920-ea8658b45baa" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -17,10 +14,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/package.json">
+        <entry file="file://$PROJECT_DIR$/.git/config">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="1" lean-forward="true" selection-start-column="1" selection-end-column="1" />
+            <state relative-caret-position="189">
+              <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -75,6 +72,7 @@
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/.git/config" />
       </list>
     </option>
   </component>
@@ -170,18 +168,18 @@
       <updated>1561966950798</updated>
       <workItem from="1561966952423" duration="20088000" />
       <workItem from="1562077849900" duration="5593000" />
-      <workItem from="1562154386740" duration="3451000" />
+      <workItem from="1562154386740" duration="3711000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48412000" />
+    <option name="totallyTimeSpent" value="48672000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10673493" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10673493" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -195,7 +193,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.35450518" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.35450518" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -279,6 +277,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="1" lean-forward="true" selection-start-column="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.git/config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
         </state>
       </provider>
     </entry>
