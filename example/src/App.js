@@ -24,7 +24,7 @@ export default class App extends Component {
           </div>
         </Preview>
         <Preview gallery={'jiji'}>
-          <div className="bear" data-preview-proto='https://farm4.staticflickr.com/3894/15008518202_c265dfa55f_h.jpg' data-preview-src="https://farm4.staticflickr.com/3894/15008518202_b016d7d289_m.jpg" />
+          <div className="bear" data-preview-proto='https://farm4.staticflickr.com/3894/15008518202_c265dfa55f_h.jpg' />
           <div className="mount" data-preview-proto='https://farm4.staticflickr.com/3920/15008465772_d50c8f0531_h.jpg' data-preview-src="https://farm4.staticflickr.com/3920/15008465772_383e697089_m.jpg" />
         </Preview>
       </div>

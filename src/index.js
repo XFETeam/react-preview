@@ -66,7 +66,19 @@ export default class ExampleComponent extends Component {
 
   componentDidMount() {
     this.initView()
+    // this.test()
   }
+
+  // async test() {
+  //   console.log('xixi')
+  //   console.log(await this.testSon())
+  // }
+  //
+  // testSon() {
+  //   return new Promise(resolve => setTimeout(() => {
+  //     resolve('haha')
+  //   }, 1000))
+  // }
 
   componentWillUnmount() {
     if (this.swiper) this.swiper.destroy()
@@ -74,35 +86,48 @@ export default class ExampleComponent extends Component {
   }
 
   getImgSize(src) {
-    if (src && src != 'none') {
+    return new Promise((resolve, reject) => {
       let img = new Image()
-      src = src.split('url("')[1].split('")')[0]
       img.src = src
-      return [img.height, img.width]
-    } else {
-      return 0
-    }
+      img.onload = () => resolve([img.height, img.width])
+      img.onerror = reject
+    })
   }
 
-  initView() {
+  geneItem(images) {
+    return Promise.all(
+      images.map(async image => {
+        if (image.tagName.toLowerCase() === 'img') {
+          return {
+            msrc: image.src || image.getAttribute('data-preview-proto'),
+            src: image.getAttribute('data-preview-proto'),
+            h: image.height * 2,
+            w: image.width * 2
+          }
+        } else {
+          let msrc = image.getAttribute('data-preview-src') || image.getAttribute('data-preview-proto')
+          let bgSize = await this.getImgSize(msrc)
+          return {
+            msrc: msrc,
+            src: image.getAttribute('data-preview-proto'),
+            h: bgSize[0] * 2,
+            w: bgSize[1] * 2
+          }
+        }
+      })
+    )
+
+  }
+
+  async initView() {
     let images = [...this.ref.current.querySelectorAll('[data-preview-proto]')]
-
-    let items = () => images.map((image) => {
-      let bgSrc = getComputedStyle(image).backgroundImage
-      return {
-        msrc: image.src || image.getAttribute('data-preview-src') || image.getAttribute('data-preview-proto'),
-        src: image.getAttribute('data-preview-proto'),
-        h: image.height ? image.height * 2 : this.getImgSize(bgSrc)[0] * 2,
-        w: image.width ? image.width * 2 : this.getImgSize(bgSrc)[1] * 2
-      }
-    })
-
+    let items = await this.geneItem(images)
     images.map((image, index) => {
       image.setAttribute('style', 'cursor: pointer')
       let pswpElement = document.querySelectorAll('.pswp')[0]
       image.onclick = (e) => {
         e.preventDefault ? e.preventDefault() : e.returnValue = false
-        this.swiper = new PhotoSwipe(pswpElement, PhotoSwipeUIDefault, items(), {
+        this.swiper = new PhotoSwipe(pswpElement, PhotoSwipeUIDefault, items, {
           loop: false,
           index: index,
           spacing: 0.12,

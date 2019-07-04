@@ -31,6 +31,7 @@ class Example extends Component {
           <div className="gallery">
             <img src="image_m.jpg" data-preview-proto='image_l.jpg' alt='img'/>
             <div data-preview-src="image_2_m.jpg" data-preview-proto='image_2_l.jpg' />
+            <div data-preview-proto='image_2_l.jpg' />
           </div>
         </Preview>
       </div>
@@ -51,7 +52,13 @@ class Example extends Component {
 
 ## Theory
 
-组件会寻找体内 jsx中任意位置具有 `data-preview-proto`属性的标签，提取其属性值（链接）组成图集，并为之绑定弹窗触发事件。因此，若要为已有元素赋予弹窗预览的能力就需要添加该属性，属性的值是图片的高分辨率版本(2x)的链接。除了`img`外其他标签需要另外一个属性`data-preview-src`作为缩略图。
+###`data-preview-proto`
+
+组件会寻找体内 jsx中任意位置具有 `data-preview-proto`属性的标签，提取其属性值（链接）组成图集，并为之绑定弹窗触发事件。因此，若要为已有元素赋予弹窗预览的能力就需要添加该属性，属性的值是图片的高分辨率版本(2x)的链接。
+
+### `data-preview-src`
+
+除了`img`外的其他标签**可以**添加另外一个属性`data-preview-src`作为缩略图。
 
 ## Props
 
