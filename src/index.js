@@ -10,16 +10,15 @@ export default class ExampleComponent extends Component {
   constructor(props) {
     super(props)
     this.dom = document.createElement('div')
-    this.galleryID = props.gallery || ''
     document.body.appendChild(this.dom)
+    this.ref = React.createRef()
   }
 
   render() {
+    const {children} = this.props
     return (
-      <div className={'react-preview-' + this.galleryID}>
-
-        {this.props.children}
-
+      <div ref={this.ref} className={'react-preview'}>
+        {children}
         {createPortal(
           <div className='pswp' tabIndex='-1' role='dialog' aria-hidden='true'>
             <div className='pswp__bg' />
@@ -29,7 +28,6 @@ export default class ExampleComponent extends Component {
                 <div className='pswp__item' />
                 <div className='pswp__item' />
               </div>
-
               <div className='pswp__ui pswp__ui--hidden' style={{opacity: 1}}>
 
                 <div className='pswp__top-bar'>
@@ -71,21 +69,19 @@ export default class ExampleComponent extends Component {
   }
 
   componentWillUnmount() {
-    this.swiper.destroy()
+    if (this.swiper) this.swiper.destroy()
     document.body.removeChild(this.dom)
   }
 
   initView() {
-
-    let images = [...document.querySelector('.react-preview-' + this.galleryID).querySelectorAll('img[data-preview-proto]')]
-
+    let images = [...this.ref.current.querySelectorAll('img[data-preview-proto]')]
     let items = () => images.map(image => ({
-        msrc: image.src,
-        src: image.getAttribute('data-preview-proto'),
-        h: image.height * 3,
-        w: image.width * 3
-      })
-    )
+      msrc: image.src,
+      src: image.getAttribute('data-preview-proto'),
+      h: image.height * 3,
+      w: image.width * 3
+    }))
+
     images.map((image, index) => {
       image.setAttribute('style', 'cursor: pointer')
       let pswpElement = document.querySelectorAll('.pswp')[0]
@@ -96,9 +92,10 @@ export default class ExampleComponent extends Component {
           index: index,
           spacing: 0.12,
           bgOpacity: 0.8,
-          getThumbBoundsFn: () => {
+          getThumbBoundsFn: (index) => {
+            let thumbnail = images[index]
             let pageYScroll = window.pageYOffset || document.documentElement.scrollTop
-            let rect = image.getBoundingClientRect()
+            let rect = thumbnail.getBoundingClientRect()
             return {x: rect.left, y: rect.top + pageYScroll, w: rect.width}
           }
         })

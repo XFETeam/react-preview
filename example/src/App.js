@@ -16,7 +16,6 @@ export default class App extends Component {
             </div>
           </div>
         </Preview>
-        <span style={{display: 'block', height: '1px', width: '100%',background:'#aaa',margin:'10px 0'}} />
         <Preview gallery={'haha'}>
           <div className="gallery">
             <img src="https://farm4.staticflickr.com/3894/15008518202_b016d7d289_m.jpg" data-preview-proto='https://farm4.staticflickr.com/3894/15008518202_c265dfa55f_h.jpg' alt='anything' />

@@ -52,6 +52,7 @@ class Example extends Component {
 | bgOpacity | 背景透明度                 | 0.8    | 0.8       | number(0-1) |
 | spacing   | 图集间距                   | 0.12   | 0.12      | Number(0-1) |
 | preload   | 是否允许预加载高分辨率图片 | false  | true      | boolean     |
+| rate   | 高分辨率与预览图的比率 | 3  | 3      | number     |
 
 ## Events
 
@@ -78,6 +79,12 @@ class Example extends Component {
 ## Requirements
 
 [PhotoSwipe](https://github.com/dimsemenov/PhotoSwipe)
+
+## Update
+
+### 1.0.1
+
+修复切换图片后无法更新返回位置的错误
 
 ## License
 
