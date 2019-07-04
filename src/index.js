@@ -11,7 +11,6 @@ export default class ExampleComponent extends Component {
     super(props)
     this.dom = document.createElement('div')
     this.galleryID = props.gallery || ''
-    console.log(this.galleryID)
     document.body.appendChild(this.dom)
   }
 
@@ -80,20 +79,13 @@ export default class ExampleComponent extends Component {
 
     let images = [...document.querySelector('.react-preview-' + this.galleryID).querySelectorAll('img[data-preview-proto]')]
 
-    let items = () => {
-      let box = []
-      images.map(image => {
-        box.push({
-          msrc: image.src,
-          src: image.getAttribute('data-preview-proto'),
-          h: image.height * 3,
-          w: image.width * 3
-        })
-
+    let items = () => images.map(image => ({
+        msrc: image.src,
+        src: image.getAttribute('data-preview-proto'),
+        h: image.height * 3,
+        w: image.width * 3
       })
-      return box
-    }
-
+    )
     images.map((image, index) => {
       image.setAttribute('style', 'cursor: pointer')
       let pswpElement = document.querySelectorAll('.pswp')[0]
