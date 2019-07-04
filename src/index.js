@@ -73,14 +73,29 @@ export default class ExampleComponent extends Component {
     document.body.removeChild(this.dom)
   }
 
+  getImgSize(src) {
+    if (src && src != 'none') {
+      let img = new Image()
+      src = src.split('url("')[1].split('")')[0]
+      img.src = src
+      return [img.height, img.width]
+    } else {
+      return 0
+    }
+  }
+
   initView() {
-    let images = [...this.ref.current.querySelectorAll('img[data-preview-proto]')]
-    let items = () => images.map(image => ({
-      msrc: image.src,
-      src: image.getAttribute('data-preview-proto'),
-      h: image.height * 3,
-      w: image.width * 3
-    }))
+    let images = [...this.ref.current.querySelectorAll('[data-preview-proto]')]
+
+    let items = () => images.map((image) => {
+      let bgSrc = getComputedStyle(image).backgroundImage
+      return {
+        msrc: image.src || image.getAttribute('data-preview-src') || image.getAttribute('data-preview-proto'),
+        src: image.getAttribute('data-preview-proto'),
+        h: image.height ? image.height * 2 : this.getImgSize(bgSrc)[0] * 2,
+        w: image.width ? image.width * 2 : this.getImgSize(bgSrc)[1] * 2
+      }
+    })
 
     images.map((image, index) => {
       image.setAttribute('style', 'cursor: pointer')

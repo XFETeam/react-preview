@@ -30,7 +30,7 @@ class Example extends Component {
         <Preview>
           <div className="gallery">
             <img src="image_m.jpg" alt='img' data-preview-proto='image_l.jpg' />
-            <img src="image_2_m.jpg" alt='img' data-preview-proto='image_2_l.jpg' />
+            <div data-preview-src="image_2_m.jpg" data-preview-proto='image_2_l.jpg' />
           </div>
         </Preview>
       </div>
@@ -39,9 +39,19 @@ class Example extends Component {
 }
 ```
 
+标准的可被查询的标签
+
+```jsx
+<img src="image_m.jpg" alt='img' data-preview-proto='image_l.jpg' />
+```
+
+```jsx
+<div data-preview-src="image_2_m.jpg" data-preview-proto='image_2_l.jpg' />
+```
+
 ## Theory
 
-组件会寻找体内 jsx中任意位置具有 `data-preview-proto`属性的`img`标签，提取其属性值（链接）组成图集，并为之绑定弹窗触发事件。因此，若要为已有`img`元素赋予弹窗预览的能力就需要添加 `data-preview-proto`属性，属性的值是图片的高分辨率版本(3x)的链接。
+组件会寻找体内 jsx中任意位置具有 `data-preview-proto`属性的标签，提取其属性值（链接）组成图集，并为之绑定弹窗触发事件。因此，若要为已有元素赋予弹窗预览的能力就需要添加该属性，属性的值是图片的高分辨率版本(2x)的链接。除了`img`外其他标签需要另外一个属性`data-preview-src`作为缩略图。
 
 ## Props
 
@@ -65,13 +75,13 @@ class Example extends Component {
 
 ### 多个图集分组
 
-在同一个页面使用多个图集分组时必须`props`传入一个**唯一值**作为图集的ID
+在同一个页面可以使用多个图集分组，分别使用`Preview`组件包裹即可
 
 ```jsx
-<Preview gallery={'xixi'}>
+<Preview>
    <img src="some_m.jpg" data-preview-proto='some_l.jpg' alt='anything' />
 </Preview>
-<Preview gallery={'haha'}>
+<Preview>
    <img src="some_m.jpg" data-preview-proto='some_l.jpg' alt='anything' />
 </Preview>
 ```
@@ -86,6 +96,11 @@ class Example extends Component {
 
 * 修复切换图片后无法更新返回位置的错误
 * 将`photoSwipe`转为外置依赖
+
+### 1.0.2
+
+* 扩展为可查询任意标签
+* 优化图集分组的方式，无需传入分组ID
 
 ## License
 

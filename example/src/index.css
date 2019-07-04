@@ -3,3 +3,17 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.bear, .mount {
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  background-image: url('https://farm4.staticflickr.com/3894/15008518202_b016d7d289_m.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 10px;
+}
+
+.mount {
+  background-image: url('https://farm4.staticflickr.com/3920/15008465772_383e697089_m.jpg');
+}
