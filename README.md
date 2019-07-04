@@ -84,7 +84,8 @@ class Example extends Component {
 
 ### 1.0.1
 
-修复切换图片后无法更新返回位置的错误
+* 修复切换图片后无法更新返回位置的错误
+* 将`photoSwipe`转为外置依赖
 
 ## License
 

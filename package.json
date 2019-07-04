@@ -1,6 +1,6 @@
 {
   "name": "react-preview",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "author": "browniu",
   "license": "MIT",
@@ -24,7 +24,8 @@
   "peerDependencies": {
     "prop-types": "^15.5.4",
     "react": "^15.0.0 || ^16.0.0",
-    "react-dom": "^15.0.0 || ^16.0.0"
+    "react-dom": "^15.0.0 || ^16.0.0",
+    "photoswipe": "^4.1.3"
   },
   "devDependencies": {
     "@svgr/rollup": "^2.4.1",
@@ -57,9 +58,5 @@
   },
   "files": [
     "dist"
-  ],
-  "dependencies": {
-    "images-preview": "^0.1.10",
-    "photoswipe": "^4.1.3"
-  }
+  ]
 }
