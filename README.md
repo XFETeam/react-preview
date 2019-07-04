@@ -42,7 +42,7 @@ class Example extends Component {
 标准的可被查询的标签
 
 ```jsx
-<img src="image_m.jpg" alt='img' data-preview-proto='image_l.jpg' />
+<img src="image_m.jpg" data-preview-proto='image_l.jpg' alt='img'/>
 ```
 
 ```jsx
