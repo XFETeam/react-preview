@@ -21,7 +21,7 @@ yarn add react-preview
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'react-preview'
+import Preview from 'react-preview'
 
 class Example extends Component {
   render () {
