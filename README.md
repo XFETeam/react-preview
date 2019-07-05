@@ -71,13 +71,7 @@ class Example extends Component {
 | animationDuration   |  从点击位置弹出的持续时间（设置为0时禁用）    | 300   | 0      | number(ms) |
 | maxSpreadZoom   |  双指缩放的最大比率   | 2   | 1      | number |
 | rate   | 高分辨率与预览图的比率 | 3  | 3      | number     |
-
-## Events
-
-| Name  | Description | Defalt  |
-| :---- | ----------- | ------- |
-| Init  | 初始化图集  | nothing |
-| close | 关闭图集    | nothing |
+| closeButtonSize | 关闭按钮尺寸 | 50 | 60 | number(px) |
 
 ## Q&A
 
@@ -113,8 +107,6 @@ class Example extends Component {
 ### 1.0.3
 
 * 异步查询图片尺寸，无需额外设置元素的背景样式
-
-
 
 ## License
 

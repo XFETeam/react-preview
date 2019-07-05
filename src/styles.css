@@ -6,10 +6,11 @@
 }
 
 .pswp__button--close {
+  user-select: none;
   display: inline-block;
   position: absolute;
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   right: 0;
   top: 0;
   cursor: pointer;
@@ -19,27 +20,32 @@
 .pswp__button--close:before, .pswp__button--close:after {
   display: inline-block;
   content: '';
-  height: 40%;
+  height: 60%;
   width: 1px;
   background: #fff;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  opacity: .7;
 }
 
 .pswp__button--close:after {
-  width: 40%;
+  width: 60%;
   height: 1px;
 }
 
 .pswp__top-bar {
   background: #00000000 !important;
 }
-.pswp__counter{
+
+.pswp__counter {
+  user-select: none;
   position: absolute;
   top: 15px;
   left: 15px;
   color: #fff;
   font-size: 12px;
+  opacity: .7;
+  font-weight: lighter;
 }

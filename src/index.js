@@ -15,7 +15,11 @@ export default class Preview extends Component {
     showHideOpacity: true,
     animationDuration: 300,
     maxSpreadZoom: 2,
-    rate: 2
+    rate: 2,
+    closeButtonSize: 50,
+    onclose: () => {
+      console.log('xixi')
+    }
   }
 
   constructor(props) {
@@ -45,9 +49,10 @@ export default class Preview extends Component {
 
                   <div className='pswp__counter' />
 
-                  <span className='pswp__button pswp__button--close' title='Close (Esc)' onClick={() => {
-                    console.log('close')
-                  }} />
+                  <span style={{
+                    height: this.props.closeButtonSize + 'px',
+                    width: this.props.closeButtonSize + 'px'
+                  }} className='pswp__button pswp__button--close' title='close' />
 
                   <div className='pswp__preloader'>
                     <div className='pswp__preloader__icn'>
@@ -114,8 +119,8 @@ export default class Preview extends Component {
     let images = [...this.ref.current.querySelectorAll('[data-preview-proto]')]
     let items = await this.geneItem(images)
     images.map((image, index) => {
-      image.setAttribute('style', 'cursor: pointer')
-      let pswpElement = document.querySelectorAll('.pswp')[0]
+      image.style.cursor = 'pointer'
+      const pswpElement = document.querySelectorAll('.pswp')[0]
       image.onclick = (e) => {
         e.preventDefault ? e.preventDefault() : e.returnValue = false
         this.swiper = new PhotoSwipe(pswpElement, PhotoSwipeUIDefault, items, {
@@ -126,6 +131,7 @@ export default class Preview extends Component {
           showAnimationDuration: this.props.animationDuration,
           hideAnimationDuration: this.props.animationDuration,
           maxSpreadZoom: this.props.maxSpreadZoom,
+          closeOnVerticalDrag: false,
           index: index,
           history: false,
           getThumbBoundsFn: (index) => {
