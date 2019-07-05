@@ -16,8 +16,8 @@ export default class App extends Component {
             </div>
           </div>
         </Preview>
-        <Preview animationDuration={0}>
-          <div className="bear" data-preview-proto='static/lake_l.jpg' />
+        <Preview animationDuration={300}>
+          <div className="bear" data-preview-proto='http://10.11.130.184:3000/assets/img/large-166e705d.jpg' />
           <div className="mount" data-preview-proto='https://farm4.staticflickr.com/3920/15008465772_d50c8f0531_h.jpg' data-preview-src="https://farm4.staticflickr.com/3920/15008465772_383e697089_m.jpg" />
         </Preview>
       </div>

@@ -16,10 +16,7 @@ export default class Preview extends Component {
     animationDuration: 300,
     maxSpreadZoom: 2,
     rate: 2,
-    closeButtonSize: 50,
-    onclose: () => {
-      console.log('xixi')
-    }
+    closeButtonSize: 50
   }
 
   constructor(props) {
@@ -71,6 +68,7 @@ export default class Preview extends Component {
                 <div className='pswp__caption'>
                   <div className='pswp__caption__center' />
                 </div>
+
               </div>
             </div>
           </div>
