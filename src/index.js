@@ -6,7 +6,7 @@ import PhotoSwipeUIDefault from 'photoswipe/dist/photoswipe-ui-default'
 import 'photoswipe/dist/photoswipe.css'
 import './styles.css'
 
-export default class ExampleComponent extends Component {
+export default class Preview extends Component {
 
   static defaultProps = {
     loop: false,
