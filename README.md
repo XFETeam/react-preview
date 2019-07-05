@@ -7,13 +7,13 @@
 ## Install
 
 ```bash
+
+## 内网
 npm install --save react-preview
-```
 
-or
+## 外网
+npm install --save react-wxpreview
 
-```bash
-yarn add react-preview
 ```
 
 ## Usage
