@@ -106,7 +106,7 @@ class Example extends Component {
 
 ### 1.0.3
 
-* 异步查询图片尺寸，无需额外设置元素的背景样式
+* 异步查询图片尺寸，无需缓存图片或者设置背景样式
 
 ## License
 
