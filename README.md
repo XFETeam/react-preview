@@ -27,7 +27,7 @@ class Example extends Component {
   render () {
     return (
       <div>
-        <Preview>
+        <Preview loop={true} bgOpacity={0.95} >
           <div className="gallery">
             <img src="image_m.jpg" data-preview-proto='image_l.jpg' alt='img'/>
             <div data-preview-src="image_2_m.jpg" data-preview-proto='image_2_l.jpg' />
@@ -109,6 +109,12 @@ class Example extends Component {
 
 * 扩展为可查询任意标签
 * 优化图集分组的方式，无需传入分组ID
+
+### 1.0.3
+
+* 异步查询图片尺寸，无需额外设置元素的背景样式
+
+
 
 ## License
 
