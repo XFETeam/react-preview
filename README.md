@@ -108,10 +108,6 @@ class Example extends Component {
 * 修复切换图片后无法更新返回位置的错误
 * 将`photoSwipe`转为外置依赖
 
-
-
-
-
 ## License
 
 MIT © 西山居 [browniu](https://github.com/browniu)
