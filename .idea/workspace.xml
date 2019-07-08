@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e28d6054-973c-4dc1-8920-ea8658b45baa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="e28d6054-973c-4dc1-8920-ea8658b45baa" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -19,8 +17,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="550">
-                <caret line="55" selection-start-line="55" selection-end-line="55" />
+              <first_editor relative-caret-position="1858">
+                <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
               </first_editor>
               <second_editor />
             </state>
@@ -183,12 +181,12 @@
       <workItem from="1562154386740" duration="24729000" />
       <workItem from="1562296149305" duration="1181000" />
       <workItem from="1562568002874" duration="3564000" />
-      <workItem from="1562572680950" duration="411000" />
+      <workItem from="1562572680950" duration="444000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77781000" />
+    <option name="totallyTimeSpent" value="77814000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1500" height="1440" extended-state="6" />
@@ -353,8 +351,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="550">
-            <caret line="55" selection-start-line="55" selection-end-line="55" />
+          <first_editor relative-caret-position="1858">
+            <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
           </first_editor>
           <second_editor />
         </state>
