@@ -1,6 +1,6 @@
 {
-  "name": "react-preview",
-  "version": "1.0.3",
+  "name": "react-wxpreview",
+  "version": "1.0.5",
   "description": "",
   "author": "browniu",
   "license": "MIT",
@@ -58,5 +58,8 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
 }

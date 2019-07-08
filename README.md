@@ -8,10 +8,6 @@
 
 ```bash
 
-## 内网
-npm install --save react-preview
-
-## 外网
 npm install --save react-wxpreview
 
 ```
