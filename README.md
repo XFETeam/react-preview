@@ -110,4 +110,4 @@ class Example extends Component {
 
 ## License
 
-MIT © [browniu](https://github.com/browniu)
+MIT © 西山居 [browniu](https://github.com/browniu)
