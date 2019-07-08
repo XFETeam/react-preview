@@ -54,7 +54,7 @@ class Example extends Component {
 
 ### `data-preview-src`
 
-除了`img`外的其他标签**可以**添加另外一个属性`data-preview-src`作为缩略图。
+组件会自动把查询到的`img`的`src`属性作为缩略图，其他标签 **还可以（非必要）** 添加另外一个属性`data-preview-src`作为缩略图链接。如果图片资源较大时，建议设置缩略图。
 
 ## Props
 
