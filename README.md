@@ -90,6 +90,10 @@ class Example extends Component {
 
 ## Update
 
+### 1.0.7
+
+* 将生产代码编译至ES5
+
 ### 1.0.3
 
 * 异步查询图片尺寸，无需缓存图片或者设置背景样式
