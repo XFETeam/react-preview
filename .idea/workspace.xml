@@ -2,17 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e28d6054-973c-4dc1-8920-ea8658b45baa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-preview/.babelrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-preview/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-preview/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-preview/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-preview/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-preview/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/example/public/static/gallery_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/example/public/static/gallery_1_s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/example/public/static/gallery_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/example/public/static/gallery_2_s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/example/public/static/lake.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/example/public/static/lake_l.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/example/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-preview/example/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/example/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-preview/example/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-preview/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/public/static/gallery_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/public/static/gallery_1_s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/public/static/gallery_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/public/static/gallery_2_s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/public/static/lake.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/public/static/lake_l.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,7 +36,17 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -51,6 +73,7 @@
       <find>fromURL</find>
       <find>previe</find>
       <find>class</find>
+      <find>initView</find>
     </findStrings>
     <replaceStrings>
       <replace>className</replace>
@@ -69,15 +92,15 @@
         <option value="$PROJECT_DIR$/source/pw/dist/script.js" />
         <option value="$PROJECT_DIR$/example/public/index.html" />
         <option value="$PROJECT_DIR$/example/package.json" />
-        <option value="$PROJECT_DIR$/example/src/index.css" />
-        <option value="$PROJECT_DIR$/example/src/App.js" />
         <option value="$PROJECT_DIR$/src/styles.css" />
-        <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/.git/config" />
         <option value="$PROJECT_DIR$/rollup.config.js" />
         <option value="$PROJECT_DIR$/.babelrc" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/example/src/index.css" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/example/src/App.js" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -88,7 +111,7 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="width" value="1026" />
+    <option name="width" value="2560" />
     <option name="height" value="1440" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -177,17 +200,19 @@
       <workItem from="1562296149305" duration="1181000" />
       <workItem from="1562568002874" duration="3564000" />
       <workItem from="1562572680950" duration="928000" />
-      <workItem from="1562656906465" duration="6297000" />
+      <workItem from="1562656906465" duration="6448000" />
+      <workItem from="1563182112664" duration="5691000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84595000" />
+    <option name="totallyTimeSpent" value="90437000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1449" height="1440" extended-state="6" />
+    <frame x="0" y="0" width="1467" height="1440" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2044818" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21369295" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -201,7 +226,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.57533234" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.35155097" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -260,27 +285,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/src/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="10" column="89" selection-start-line="10" selection-start-column="89" selection-end-line="10" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="534">
           <caret line="37" column="16" lean-forward="true" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -304,13 +312,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/babel-preset-umi/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="49" column="33" lean-forward="true" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/babel-preset-umi/package.json" />
     <entry file="file://$PROJECT_DIR$/node_modules/@babel/helper-plugin-utils/lib/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1048">
@@ -349,20 +351,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/example/src/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        <state relative-caret-position="231">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1332">
-          <caret line="8" column="48" lean-forward="true" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+        <state relative-caret-position="609">
+          <caret line="130" column="32" selection-start-line="130" selection-start-column="32" selection-end-line="130" selection-end-column="32" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#691#2430#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
         </state>
       </provider>
     </entry>

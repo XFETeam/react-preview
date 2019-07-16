@@ -4,7 +4,7 @@
 
 [![NPM](https://img.shields.io/npm/v/react-wxpreview.svg)](https://www.npmjs.com/package/react-wxpreview) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-## Install
+## Install（**命名冲突请使用 wxpreview 安装**）
 
 ```bash
 
@@ -23,13 +23,30 @@ class Example extends Component {
   render () {
     return (
       <div>
-        <Preview loop={true} bgOpacity={0.95} >
+        
+        {/*method 1-图片元素*/}
+        <Preview loop={true} bgOpacity={0.95}>
           <div className="gallery">
-            <img src="image_m.jpg" data-preview-proto='image_l.jpg' alt='img'/>
-            <div data-preview-src="image_2_m.jpg" data-preview-proto='image_2_l.jpg' />
-            <div data-preview-proto='image_2_l.jpg' />
+            <img src="static/preview_1.jpeg" data-preview-proto='static/preview_1_l.jpeg' alt='anything' />
+            <br />
+            <img src="static/preview_2.png" data-preview-proto='static/preview_2_l.png' alt='anything' />
           </div>
         </Preview>
+
+        {/*method 2-非图片元素*/}
+        <Preview animationDuration={300} button={{dom: '.open1', index: 0}}>
+          <div className="mount" data-preview-proto='static/preview_3_l.jpg' data-preview-src="static/preview_3.jpg" style={{backgroundImage: 'url(static/preview_3.jpg)'}} />
+        </Preview>
+
+        <button className="open1">open1</button>
+
+        {/*method 3-非包裹*/}
+        <Preview button={{
+          dom: '.open2',
+          index: 1
+        }} list={['static/preview_4_l.jpg', 'static/preview_5_l.png']} />
+
+        <button className="open2">open2</button>
       </div>
     )
   }
@@ -68,6 +85,10 @@ class Example extends Component {
 | maxSpreadZoom   |  双指缩放的最大比率   | 2   | 1      | number |
 | rate   | 高分辨率与预览图的比率 | 3  | 3      | number     |
 | closeButtonSize | 关闭按钮尺寸 | 50 | 60 | number(px) |
+| button | 单独绑定的触发按钮 | undefault | {dom:'.button',index:0} | object |
+| list | 无需包裹单独传入的图集链接 | undefault | ['image1.jpg','image2.jpg'] | array |
+
+
 
 ## Q&A
 
@@ -89,6 +110,12 @@ class Example extends Component {
 [PhotoSwipe](https://github.com/dimsemenov/PhotoSwipe)
 
 ## Update
+
+#### 1.0.8
+
+* 添加可单独绑定激活事件元素的接口
+* 拓展非包裹的画集生成方式
+* 优化部分执行逻辑，提高稳定性
 
 ### 1.0.7
 

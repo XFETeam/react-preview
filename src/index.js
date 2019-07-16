@@ -16,7 +16,9 @@ export default class Preview extends Component {
     animationDuration: 300,
     maxSpreadZoom: 2,
     rate: 2,
-    closeButtonSize: 50
+    closeButtonSize: 50,
+    button: undefined,
+    list: undefined,
   }
 
   constructor(props) {
@@ -115,32 +117,51 @@ export default class Preview extends Component {
 
   async initView() {
     let images = [...this.ref.current.querySelectorAll('[data-preview-proto]')]
+
+    if (this.props.list) {
+      images = this.props.list.map(image => {
+        let img = new Image()
+        img.src = image
+        img.setAttribute('data-preview-proto', image)
+        return img
+      })
+    } else {
+      images.map((image, index) => {
+        image.style.cursor = 'pointer'
+        image.onclick = (e) => {
+          e.preventDefault ? e.preventDefault() : e.returnValue = false
+          this.geneView(images, index)
+        }
+      })
+    }
+
+    if (this.props.button) {
+      let button = document.querySelector(this.props.button.dom)
+      if (button) button.onclick = () => this.geneView(images, this.props.button.index || 0)
+    }
+  }
+
+  async geneView(images, index) {
     let items = await this.geneItem(images)
-    images.map((image, index) => {
-      image.style.cursor = 'pointer'
-      const pswpElement = document.querySelectorAll('.pswp')[0]
-      image.onclick = (e) => {
-        e.preventDefault ? e.preventDefault() : e.returnValue = false
-        this.swiper = new PhotoSwipe(pswpElement, PhotoSwipeUIDefault, items, {
-          loop: this.props.loop,
-          spacing: this.props.spacing,
-          bgOpacity: this.props.bgOpacity,
-          showHideOpacity: this.props.showHideOpacity,
-          showAnimationDuration: this.props.animationDuration,
-          hideAnimationDuration: this.props.animationDuration,
-          maxSpreadZoom: this.props.maxSpreadZoom,
-          closeOnVerticalDrag: false,
-          index: index,
-          history: false,
-          getThumbBoundsFn: (index) => {
-            let thumbnail = images[index]
-            let pageYScroll = window.pageYOffset || document.documentElement.scrollTop
-            let rect = thumbnail.getBoundingClientRect()
-            return {x: rect.left, y: rect.top + pageYScroll, w: rect.width}
-          }
-        })
-        this.swiper.init()
+    const pswpElement = document.querySelector('.pswp')
+    this.swiper = new PhotoSwipe(pswpElement, PhotoSwipeUIDefault, items, {
+      loop: this.props.loop,
+      spacing: this.props.spacing,
+      bgOpacity: this.props.bgOpacity,
+      showHideOpacity: this.props.showHideOpacity,
+      showAnimationDuration: this.props.list ? 0 : this.props.animationDuration,
+      hideAnimationDuration: this.props.list ? 0 : this.props.animationDuration,
+      maxSpreadZoom: this.props.maxSpreadZoom,
+      closeOnVerticalDrag: false,
+      index: index,
+      history: false,
+      getThumbBoundsFn: (index) => {
+        let thumbnail = images[index]
+        let pageYScroll = window.pageYOffset || document.documentElement.scrollTop
+        let rect = thumbnail.getBoundingClientRect()
+        return {x: rect.left, y: rect.top + pageYScroll, w: rect.width}
       }
     })
+    this.swiper.init()
   }
 }

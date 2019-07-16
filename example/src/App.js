@@ -6,20 +6,30 @@ export default class App extends Component {
   render() {
     return (
       <div>
+
+        {/*method 1*/}
         <Preview loop={true} bgOpacity={0.95}>
           <div className="gallery">
-            <img src="https://farm4.staticflickr.com/3894/15008518202_b016d7d289_m.jpg" data-preview-proto='https://farm4.staticflickr.com/3894/15008518202_c265dfa55f_h.jpg' alt='anything' />
+            <img src="static/preview_1.jpeg" data-preview-proto='static/preview_1_l.jpeg' alt='anything' />
             <br />
-            <img src="https://farm4.staticflickr.com/3920/15008465772_383e697089_m.jpg" data-preview-proto='https://farm4.staticflickr.com/3920/15008465772_d50c8f0531_h.jpg' alt='anything' />
-            <div className="test">
-              <img src="https://farm6.staticflickr.com/5584/14985868676_4b802b932a_m.jpg" data-preview-proto='https://farm6.staticflickr.com/5584/14985868676_b51baa4071_h.jpg' alt='anything' />
-            </div>
+            <img src="static/preview_2.png" data-preview-proto='static/preview_2_l.png' alt='anything' />
           </div>
         </Preview>
-        <Preview animationDuration={300}>
-          <div className="bear" data-preview-proto='http://10.11.130.184:3000/assets/img/large-166e705d.jpg' />
-          <div className="mount" data-preview-proto='https://farm4.staticflickr.com/3920/15008465772_d50c8f0531_h.jpg' data-preview-src="https://farm4.staticflickr.com/3920/15008465772_383e697089_m.jpg" />
+
+        {/*method 2*/}
+        <Preview animationDuration={300} button={{dom: '.open1', index: 0}}>
+          <div className="mount" data-preview-proto='static/preview_3_l.jpg' data-preview-src="static/preview_3.jpg" style={{backgroundImage: 'url(static/preview_3.jpg)'}} />
         </Preview>
+
+        <button className="open1">open1</button>
+
+        {/*method 3*/}
+        <Preview button={{
+          dom: '.open2',
+          index: 1
+        }} list={['static/preview_4_l.jpg', 'static/preview_5_l.png']} />
+
+        <button className="open2">open2</button>
       </div>
     )
   }
