@@ -2,29 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e28d6054-973c-4dc1-8920-ea8658b45baa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-preview/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-preview/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/example/public/static/gallery_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/example/public/static/gallery_1_s.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/example/public/static/gallery_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/example/public/static/gallery_2_s.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/example/public/static/lake.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/example/public/static/lake_l.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/example/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-preview/example/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/example/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-preview/example/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/node_modules/react-preview/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/node_modules/react-preview/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/public/static/gallery_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/public/static/gallery_1_s.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/public/static/gallery_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/public/static/gallery_2_s.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/public/static/lake.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/public/static/lake_l.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -38,10 +16,13 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="335">
+                <caret line="113" column="3" selection-start-line="113" selection-start-column="3" selection-end-line="113" selection-end-column="3" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -96,11 +77,11 @@
         <option value="$PROJECT_DIR$/.git/config" />
         <option value="$PROJECT_DIR$/rollup.config.js" />
         <option value="$PROJECT_DIR$/.babelrc" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/example/src/index.css" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/example/src/App.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -201,12 +182,12 @@
       <workItem from="1562568002874" duration="3564000" />
       <workItem from="1562572680950" duration="928000" />
       <workItem from="1562656906465" duration="6448000" />
-      <workItem from="1563182112664" duration="5691000" />
+      <workItem from="1563182112664" duration="5851000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90437000" />
+    <option name="totallyTimeSpent" value="90597000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1467" height="1440" extended-state="6" />
@@ -341,16 +322,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="301">
-            <caret line="100" column="9" lean-forward="true" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/src/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -383,6 +354,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="335">
+            <caret line="113" column="3" selection-start-line="113" selection-start-column="3" selection-end-line="113" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

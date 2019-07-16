@@ -111,7 +111,7 @@ class Example extends Component {
 
 ## Update
 
-#### 1.0.8
+### 1.0.8
 
 * 添加可单独绑定激活事件元素的接口
 * 拓展非包裹的画集生成方式
