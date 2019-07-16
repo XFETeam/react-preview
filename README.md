@@ -86,7 +86,7 @@ class Example extends Component {
 | rate   | 高分辨率与预览图的比率 | 3  | 3      | number     |
 | closeButtonSize | 关闭按钮尺寸 | 50 | 60 | number(px) |
 | button | 单独绑定的触发按钮 | undefault | {dom:'.button',index:0} | object |
-| list | 无需包裹单独传入的图集链接 | undefault | ['image1.jpg','image2.jpg'] | array |
+| list | 无需包裹单独传入的图集链接(须配合button使用) | undefault | ['image1.jpg','image2.jpg'] | array |
 
 
 
