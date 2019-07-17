@@ -1,4 +1,4 @@
-# react-preview ([demo](https://browniu.com/react-preview))
+react-preview ([demo](https://browniu.com/react-preview))
 
 > Image preview in react
 
@@ -24,27 +24,30 @@ class Example extends Component {
     return (
       <div>
         
-        {/*method 1-图片元素*/}
+        {/*method 1-图片元素查询*/}
         <Preview loop={true} bgOpacity={0.95}>
           <div className="gallery">
-            <img src="static/preview_1.jpeg" data-preview-proto='static/preview_1_l.jpeg' alt='anything' />
+       			<img src="static/preview_1.jpeg" data-preview-proto='static/preview_1_l.jpeg' data-preview-title='Van Gogh' />
             <br />
-            <img src="static/preview_2.png" data-preview-proto='static/preview_2_l.png' alt='anything' />
+            <img src="static/preview_2.png" data-preview-proto='static/preview_2_l.png' data-preview-title='Northern Europe' />
           </div>
         </Preview>
 
-        {/*method 2-非图片元素*/}
+        {/*method 2-非图片元素查询*/}
         <Preview animationDuration={300} button={{dom: '.open1', index: 0}}>
           <div className="mount" data-preview-proto='static/preview_3_l.jpg' data-preview-src="static/preview_3.jpg" style={{backgroundImage: 'url(static/preview_3.jpg)'}} />
         </Preview>
 
         <button className="open1">open1</button>
 
-        {/*method 3-非包裹*/}
+        {/*method 3-非包裹式调用*/}
         <Preview button={{
           dom: '.open2',
           index: 1
-        }} list={['static/preview_4_l.jpg', 'static/preview_5_l.png']} />
+        }} list={['static/preview_4_l.jpg', 'static/preview_5_l.png', {
+          src: 'static/preview_1_l.jpeg',
+          title: 'something'
+        }]} />
 
         <button className="open2">open2</button>
       </div>
@@ -56,11 +59,11 @@ class Example extends Component {
 标准的可被查询的标签
 
 ```jsx
-<img src="image_m.jpg" data-preview-proto='image_l.jpg' alt='img'/>
+<img src="image_m.jpg" data-preview-proto='image_l.jpg' data-preview-title='image' />
 ```
 
 ```jsx
-<div data-preview-src="image_2_m.jpg" data-preview-proto='image_2_l.jpg' />
+<div data-preview-src="image_2_m.jpg" data-preview-proto='image_2_l.jpg' data-preview-title='image' />
 ```
 
 ## Theory
@@ -72,6 +75,10 @@ class Example extends Component {
 ### `data-preview-src`
 
 组件会自动把查询到的`img`的`src`属性作为缩略图，其他标签 **还可以（非必要）** 添加另外一个属性`data-preview-src`作为缩略图链接。如果图片资源较大时，建议设置缩略图。
+
+### `data-preview-title`
+
+组件会读取属性值作为当前图片附带的标题信息，提供默认显示样式，可通过`titleStyle`覆盖自定义样式
 
 ## Props
 
@@ -86,7 +93,8 @@ class Example extends Component {
 | rate   | 高分辨率与预览图的比率 | 3  | 3      | number     |
 | closeButtonSize | 关闭按钮尺寸 | 50 | 60 | number(px) |
 | button | 单独绑定的触发按钮 | undefault | {dom:'.button',index:0} | object |
-| list | 无需包裹单独传入的图集链接(须配合button使用) | undefault | ['image1.jpg','image2.jpg'] | array |
+| list | 无需包裹单独传入的图集链接(须配合button使用) | undefault | ['image1.jpg',{src:'image2.jpg',tit:'something'}] | array |
+| titleStyle | 图片标题的自定义样式 | {} | {color:'pink'} | object |
 
 
 
@@ -110,6 +118,11 @@ class Example extends Component {
 [PhotoSwipe](https://github.com/dimsemenov/PhotoSwipe)
 
 ## Update
+
+### 1.0.9
+
+* 可添加图片标题
+* 提供自定义标题样式接口
 
 ### 1.0.8
 

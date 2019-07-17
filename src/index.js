@@ -19,6 +19,7 @@ export default class Preview extends Component {
     closeButtonSize: 50,
     button: undefined,
     list: undefined,
+    titleStyle: {}
   }
 
   constructor(props) {
@@ -67,7 +68,7 @@ export default class Preview extends Component {
                   <div className='pswp__share-tooltip' />
                 </div>
 
-                <div className='pswp__caption'>
+                <div className='pswp__caption' style={this.props.titleStyle}>
                   <div className='pswp__caption__center' />
                 </div>
 
@@ -100,13 +101,15 @@ export default class Preview extends Component {
 
   geneItem(images) {
     return Promise.all(
-      images.map(async image => {
+      images.map(async (image, index) => {
         let msrc = image.getAttribute('data-preview-src') || image.getAttribute('data-preview-proto')
+        let title = image.getAttribute('data-preview-title') || undefined
         if (image.tagName.toLowerCase() === 'img') msrc = image.src || image.getAttribute('data-preview-proto')
         const bgSize = await this.getImgSize(msrc)
         return {
           msrc: msrc,
           src: image.getAttribute('data-preview-proto'),
+          title: title,
           h: bgSize[0] * this.props.rate,
           w: bgSize[1] * this.props.rate
         }
@@ -120,9 +123,12 @@ export default class Preview extends Component {
 
     if (this.props.list) {
       images = this.props.list.map(image => {
+        let src = image
+        if (typeof image === 'object') src = image.src
         let img = new Image()
-        img.src = image
-        img.setAttribute('data-preview-proto', image)
+        img.src = src
+        img.setAttribute('data-preview-proto', src)
+        if (image.title) img.setAttribute('data-preview-title', image.title)
         return img
       })
     } else {

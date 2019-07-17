@@ -8,11 +8,11 @@ export default class App extends Component {
       <div>
 
         {/*method 1*/}
-        <Preview loop={true} bgOpacity={0.95}>
+        <Preview loop={true} bgOpacity={0.95} titleStyle={{color: 'pink'}}>
           <div className="gallery">
-            <img src="static/preview_1.jpeg" data-preview-proto='static/preview_1_l.jpeg' alt='anything' />
+            <img src="static/preview_1.jpeg" data-preview-proto='static/preview_1_l.jpeg' data-preview-title='Van Gogh' />
             <br />
-            <img src="static/preview_2.png" data-preview-proto='static/preview_2_l.png' alt='anything' />
+            <img src="static/preview_2.png" data-preview-proto='static/preview_2_l.png' data-preview-title='Northern Europe' />
           </div>
         </Preview>
 
@@ -27,7 +27,10 @@ export default class App extends Component {
         <Preview button={{
           dom: '.open2',
           index: 1
-        }} list={['static/preview_4_l.jpg', 'static/preview_5_l.png']} />
+        }} list={['static/preview_4_l.jpg', 'static/preview_5_l.png', {
+          src: 'static/preview_1_l.jpeg',
+          title: 'something'
+        }]} />
 
         <button className="open2">open2</button>
       </div>
