@@ -91,10 +91,21 @@ class Example extends Component {
 | animationDuration   |  从点击位置弹出的持续时间（设置为0时禁用）    | 300   | 0      | number(ms) |
 | maxSpreadZoom   |  双指缩放的最大比率   | 2   | 1      | number |
 | rate   | 高分辨率与预览图的比率 | 3  | 3      | number     |
-| closeButtonSize | 关闭按钮尺寸 | 50 | 60 | number(px) |
-| button | 单独绑定的触发按钮 | undefault | {dom:'.button',index:0} | object |
+| closeListen | 关闭图集时的回调函数 | undefalut | ()=>{console.log('close')} | function |
+| closeButtonSize | 自定义默认关闭按钮尺寸 | 50 | 60 | number(px) |
+| openButton | 单独绑定的触发按钮 | undefault | {dom:'.button',index:0} | object |
 | list | 无需包裹单独传入的图集链接(须配合button使用) | undefault | ['image1.jpg',{src:'image2.jpg',tit:'something'}] | array |
 | titleStyle | 图片标题的自定义样式 | {} | {color:'pink'} | object |
+
+## Event
+
+图集被打开的时候会注册下列全局事件，关闭的时候会自动销毁，请在图集打开状态下进行调用
+
+| Name                               | Description          |
+| ---------------------------------- | -------------------- |
+| window.wxPreview.close()           | 全局关闭图集事件     |
+| window.wxPreview.destroy()         | 全局销毁图集事件     |
+| window.wxPreview.getCurrentIndex() | 获取当前活动元素序列 |
 
 
 
@@ -118,6 +129,11 @@ class Example extends Component {
 [PhotoSwipe](https://github.com/dimsemenov/PhotoSwipe)
 
 ## Update
+
+### 1.1.0
+
+* 注册全局图集关闭/销毁/查询事件
+* 提供图集关闭时的回调接口
 
 ### 1.0.9
 

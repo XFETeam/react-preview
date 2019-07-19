@@ -10,21 +10,21 @@ export default class App extends Component {
         {/*method 1*/}
         <Preview loop={true} bgOpacity={0.95} titleStyle={{color: 'pink'}}>
           <div className="gallery">
-            <img src="static/preview_1.jpeg" data-preview-proto='static/preview_1_l.jpeg' data-preview-title='Van Gogh' />
+            <img src="static/preview_1.jpeg" data-preview-proto='static/preview_1_l.jpeg' data-preview-title='Van Gogh' alt='img' />
             <br />
-            <img src="static/preview_2.png" data-preview-proto='static/preview_2_l.png' data-preview-title='Northern Europe' />
+            <img src="static/preview_2.png" data-preview-proto='static/preview_2_l.png' data-preview-title='Northern Europe' alt='img' />
           </div>
         </Preview>
 
         {/*method 2*/}
-        <Preview animationDuration={300} button={{dom: '.open1', index: 0}}>
+        <Preview animationDuration={300} openButton={{dom: '.open1', index: 0}}>
           <div className="mount" data-preview-proto='static/preview_3_l.jpg' data-preview-src="static/preview_3.jpg" style={{backgroundImage: 'url(static/preview_3.jpg)'}} />
         </Preview>
 
         <button className="open1">open1</button>
 
         {/*method 3*/}
-        <Preview button={{
+        <Preview openButton={{
           dom: '.open2',
           index: 1
         }} list={['static/preview_4_l.jpg', 'static/preview_5_l.png', {

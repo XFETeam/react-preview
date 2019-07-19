@@ -16,8 +16,9 @@ export default class Preview extends Component {
     animationDuration: 300,
     maxSpreadZoom: 2,
     rate: 2,
+    closeListen: () => {},
     closeButtonSize: 50,
-    button: undefined,
+    openButton: undefined,
     list: undefined,
     titleStyle: {}
   }
@@ -141,10 +142,11 @@ export default class Preview extends Component {
       })
     }
 
-    if (this.props.button) {
-      let button = document.querySelector(this.props.button.dom)
-      if (button) button.onclick = () => this.geneView(images, this.props.button.index || 0)
+    if (this.props.openButton) {
+      let openButton = document.querySelector(this.props.openButton.dom)
+      if (openButton) openButton.onclick = () => this.geneView(images, this.props.openButton.index || 0)
     }
+
   }
 
   async geneView(images, index) {
@@ -169,5 +171,10 @@ export default class Preview extends Component {
       }
     })
     this.swiper.init()
+    window.wxPreview = this.swiper
+    this.swiper.listen('close', () => {
+      this.props.closeListen()
+      window.wxPreview = undefined
+    })
   }
 }
