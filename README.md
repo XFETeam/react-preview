@@ -68,15 +68,15 @@ class Example extends Component {
 
 ## Theory
 
-### `data-preview-proto`
+### **`data-preview-proto`** (必须携带的参数)
 
 组件会查询体内任意位置具有 `data-preview-proto` 属性的html标签，提取属性值（链接）组成预览图集，并为之绑定弹窗触发事件。为已有元素赋予弹窗预览的能力只需要添加该属性，属性值是图片链接。
 
-### `data-preview-src`
+### `data-preview-src`（可选）
 
 组件会自动把查询到的`img`的`src`属性作为缩略图，其他标签 **还可以（非必要）** 添加另外一个属性`data-preview-src`作为缩略图链接。如果图片资源较大时，建议设置缩略图。
 
-### `data-preview-title`
+### `data-preview-title`（可选）
 
 组件会读取属性值作为当前图片附带的标题信息，提供默认显示样式，可通过`titleStyle`覆盖自定义样式
 
@@ -88,7 +88,7 @@ class Example extends Component {
 | bgOpacity | 背景透明度                 | 0.8    | 0.8       | number(0-1) |
 | spacing   | 图集间距                   | 0.12   | 0.12      | Number(0-1) |
 | showHideOpacity   | 显示和关闭时是否开启透明渐变    | true   | false      | boolean |
-| animationDuration   |  从点击位置弹出的持续时间（设置为0时禁用）    | 300   | 0      | number(ms) |
+| fromPosition |  从点击位置弹出的持续时间（设置为0时禁用）    | true | false | number(ms) |
 | maxSpreadZoom   |  双指缩放的最大比率   | 2   | 1      | number |
 | rate   | 高分辨率与预览图的比率 | 3  | 3      | number     |
 | closeListen | 关闭图集时的回调函数 | undefalut | ()=>{console.log('close')} | function |
@@ -129,6 +129,10 @@ class Example extends Component {
 [PhotoSwipe](https://github.com/dimsemenov/PhotoSwipe)
 
 ## Update
+
+### 1.1.1
+
+* 从点击位置弹出属性：更改 `animationDuration` 为 `fromPosition`
 
 ### 1.1.0
 
