@@ -41,7 +41,7 @@ class Example extends Component {
         <button className="open1">open1</button>
 
         {/*method 3-非包裹式调用*/}
-        <Preview button={{
+        <Preview openButton={{
           dom: '.open2',
           index: 1
         }} list={['static/preview_4_l.jpg', 'static/preview_5_l.png', {
@@ -133,6 +133,7 @@ class Example extends Component {
 ### 1.1.1
 
 * 从点击位置弹出属性：更改 `animationDuration` 为 `fromPosition`
+* 新增设置热点标题功能
 
 ### 1.1.0
 
