@@ -3,7 +3,15 @@ import React, {Component} from 'react'
 import Preview from 'react-preview'
 
 export default class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      list: ['static/preview_4_l.jpg', 'static/preview_5_l.png', 'static/preview_1_l.jpeg']
+    }
+  }
+
   render() {
+    let list = ['static/preview_4_l.jpg', 'static/preview_5_l.png', 'static/preview_1_l.jpeg']
     return (
       <div>
 
@@ -27,12 +35,25 @@ export default class App extends Component {
         <Preview openButton={{
           dom: '.open2',
           index: 1
-        }} list={['static/preview_4_l.jpg', 'static/preview_5_l.png', {
-          src: 'static/preview_1_l.jpeg',
-          title: 'something'
-        }]} />
+        }} list={this.state.list} />
 
         <button className="open2">open2</button>
+        {/*异步更新数据-JS激活*/}
+        <button className="open2x" onClick={() => {
+          this.setState({list: ['static/preview_2_l.png']})
+          setTimeout(() => {
+            window.wxPreviewActive()
+          }, 50)
+        }}>open2x
+        </button>
+        {/*异步更新数据-JS激活*/}
+        <button className="open2y" onClick={() => {
+          this.setState({list: ['static/preview_4_l.jpg']})
+          setTimeout(() => {
+            window.wxPreviewActive()
+          }, 50)
+        }}>open2y
+        </button>
       </div>
     )
   }

@@ -28,6 +28,9 @@ export default class Preview extends Component {
     this.dom = document.createElement('div')
     document.body.appendChild(this.dom)
     this.ref = React.createRef()
+    this.state = {
+      list: this.props.list
+    }
   }
 
   render() {
@@ -86,6 +89,15 @@ export default class Preview extends Component {
     this.initView()
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.list !== nextProps.list) {
+      if (nextProps.list) {
+        this.setState({list: nextProps.list})
+        setTimeout(() => {this.initView()})
+      }
+    }
+  }
+
   componentWillUnmount() {
     if (this.swiper) this.swiper.destroy()
     document.body.removeChild(this.dom)
@@ -121,9 +133,8 @@ export default class Preview extends Component {
 
   async initView() {
     let images = [...this.ref.current.querySelectorAll('[data-preview-proto]')]
-
-    if (this.props.list) {
-      images = this.props.list.map(image => {
+    if (this.state.list) {
+      images = this.state.list.map(image => {
         let src = image
         if (typeof image === 'object') src = image.src
         let img = new Image()
@@ -141,7 +152,9 @@ export default class Preview extends Component {
         }
       })
     }
-
+    window.wxPreviewActive = () => {
+      this.geneView(images, this.props.openButton.index || 0)
+    }
     if (this.props.openButton) {
       let openButton = document.querySelector(this.props.openButton.dom)
       if (openButton) openButton.onclick = () => this.geneView(images, this.props.openButton.index || 0)

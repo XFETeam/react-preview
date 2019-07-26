@@ -44,12 +44,25 @@ class Example extends Component {
         <Preview openButton={{
           dom: '.open2',
           index: 1
-        }} list={['static/preview_4_l.jpg', 'static/preview_5_l.png', {
-          src: 'static/preview_1_l.jpeg',
-          title: 'something'
-        }]} />
+        }} list={this.state.list} />
 
         <button className="open2">open2</button>
+        {/*异步更新数据-JS激活*/}
+        <button className="open2x" onClick={() => {
+          this.setState({list: ['static/preview_2_l.png']})
+          setTimeout(() => {
+            window.wxPreviewActive()
+          }, 50)
+        }}>open2x
+        </button>
+        {/*异步更新数据-JS激活*/}
+        <button className="open2y" onClick={() => {
+          this.setState({list: ['static/preview_4_l.jpg']})
+          setTimeout(() => {
+            window.wxPreviewActive()
+          }, 50)
+        }}>open2y
+        </button>
       </div>
     )
   }
@@ -99,6 +112,12 @@ class Example extends Component {
 
 ## Event
 
+激活组件
+
+| Name                     | Description      |
+| ------------------------ | ---------------- |
+| window.wxPreviewActive() | 全局激活图集事件 |
+
 图集被打开的时候会注册下列全局事件，关闭的时候会自动销毁，请在图集打开状态下进行调用
 
 | Name                               | Description          |
@@ -129,6 +148,11 @@ class Example extends Component {
 [PhotoSwipe](https://github.com/dimsemenov/PhotoSwipe)
 
 ## Update
+
+### 1.1.2
+
+* 新增全局激活事件`window.wxPreviewActive()`
+* 内置自更新机制，传入列表变更时自动重载
 
 ### 1.1.1
 
