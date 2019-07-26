@@ -11,7 +11,6 @@ export default class App extends Component {
   }
 
   render() {
-    let list = ['static/preview_4_l.jpg', 'static/preview_5_l.png', 'static/preview_1_l.jpeg']
     return (
       <div>
 
@@ -41,9 +40,11 @@ export default class App extends Component {
         {/*异步更新数据-JS激活*/}
         <button className="open2x" onClick={() => {
           this.setState({list: ['static/preview_2_l.png']})
-          setTimeout(() => {
-            window.wxPreviewActive()
-          }, 50)
+          fetch('https://jsonplaceholder.typicode.com/todos/1')
+            .then(response => response.json())
+            .then(() => {
+              window.wxPreviewActive()
+            })
         }}>open2x
         </button>
         {/*异步更新数据-JS激活*/}

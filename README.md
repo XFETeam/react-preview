@@ -7,9 +7,7 @@ react-preview ([demo](https://browniu.com/react-preview))
 ## Install（**命名冲突请使用 wxpreview 安装**）
 
 ```bash
-
 npm install --save react-wxpreview
-
 ```
 
 ## Usage
@@ -46,13 +44,13 @@ class Example extends Component {
           index: 1
         }} list={this.state.list} />
 
-        <button className="open2">open2</button>
-        {/*异步更新数据-JS激活*/}
         <button className="open2x" onClick={() => {
           this.setState({list: ['static/preview_2_l.png']})
-          setTimeout(() => {
-            window.wxPreviewActive()
-          }, 50)
+          fetch('https://jsonplaceholder.typicode.com/todos/1')
+            .then(response => response.json())
+            .then(() => {
+              window.wxPreviewActive()
+            })
         }}>open2x
         </button>
         {/*异步更新数据-JS激活*/}
@@ -107,7 +105,7 @@ class Example extends Component {
 | closeListen | 关闭图集时的回调函数 | undefalut | ()=>{console.log('close')} | function |
 | closeButtonSize | 自定义默认关闭按钮尺寸 | 50 | 60 | number(px) |
 | openButton | 单独绑定的触发按钮 | undefault | {dom:'.button',index:0} | object |
-| list | 无需包裹单独传入的图集链接(须配合button使用) | undefault | ['image1.jpg',{src:'image2.jpg',tit:'something'}] | array |
+| list | 无需包裹单独传入的图集链接 | undefault | ['image1.jpg',{src:'image2.jpg',tit:'something'}] | array |
 | titleStyle | 图片标题的自定义样式 | {} | {color:'pink'} | object |
 
 ## Event
@@ -155,20 +153,12 @@ class Example extends Component {
 * 新增全局关闭/销毁/查询索引事件
 * 内置自更新机制，列表数据变更时自动重载组件
 
-### 1.1.1
-
-* 从点击位置弹出属性：更改 `animationDuration` 为 `fromPosition`
-* 新增设置热点标题功能
-
-### 1.1.0
-
-* 注册全局图集关闭/销毁/查询事件
-* 提供图集关闭时的回调接口
-
 ### 1.0.9
 
 * 可添加图片标题
 * 提供自定义标题样式接口
+* 提供图集关闭时的回调接口
+* 从点击位置弹出属性：更改 `animationDuration` 为 `fromPosition`
 
 ### 1.0.8
 
