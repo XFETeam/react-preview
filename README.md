@@ -43,7 +43,7 @@ class Example extends Component {
           dom: '.open2',
           index: 1
         }} list={this.state.list} />
-
+				{/*异步更新数据-JS激活*/}
         <button className="open2x" onClick={() => {
           this.setState({list: ['static/preview_2_l.png']})
           fetch('https://jsonplaceholder.typicode.com/todos/1')
