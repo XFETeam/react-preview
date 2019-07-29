@@ -23,7 +23,7 @@ class Example extends Component {
       <div>
         
         {/*method 1-图片元素查询*/}
-        <Preview loop={true} bgOpacity={0.95}>
+        <Preview loop={true} bgOpacity={0.95} fullClose={true}>
           <div className="gallery">
        			<img src="static/preview_1.jpeg" data-preview-proto='static/preview_1_l.jpeg' data-preview-title='Van Gogh' />
             <br />
@@ -104,6 +104,7 @@ class Example extends Component {
 | rate   | 高分辨率与预览图的比率 | 3  | 3      | number     |
 | closeListen | 关闭图集时的回调函数 | undefalut | ()=>{console.log('close')} | function |
 | closeButtonSize | 自定义默认关闭按钮尺寸 | 50 | 60 | number(px) |
+| fullClose | 移动端遮罩层点击触发关闭（对性能有一定影响） | false | fullClose={true} | boolean |
 | openButton | 单独绑定的触发按钮 | undefault | {dom:'.button',index:0} | object |
 | list | 无需包裹单独传入的图集链接 | undefault | ['image1.jpg',{src:'image2.jpg',tit:'something'}] | array |
 | titleStyle | 图片标题的自定义样式 | {} | {color:'pink'} | object |
@@ -146,6 +147,10 @@ class Example extends Component {
 [PhotoSwipe](https://github.com/dimsemenov/PhotoSwipe)
 
 ## Update
+
+### 1.1.3
+
+* 移动端开放遮罩层关闭接口
 
 ### 1.1.2
 

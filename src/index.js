@@ -20,13 +20,15 @@ export default class Preview extends Component {
     closeButtonSize: 50,
     openButton: undefined,
     list: undefined,
-    titleStyle: {}
+    titleStyle: {},
+    fullClose: false
   }
 
   constructor(props) {
     super(props)
     this.dom = document.createElement('div')
     document.body.appendChild(this.dom)
+    this.isMobile = () => /Android|webOS|iPhone|iPod|BlackBerry|iPad/i.test(navigator.userAgent)
     this.ref = React.createRef()
     this.state = {
       list: this.props.list
@@ -56,8 +58,7 @@ export default class Preview extends Component {
                   <span style={{
                     height: this.props.closeButtonSize + 'px',
                     width: this.props.closeButtonSize + 'px'
-                  }} className='pswp__button pswp__button--close' title='close' />
-
+                  }} className={['pswp__button pswp__button--close', this.props.fullClose && this.isMobile ? 'full' : 'normal'].join(' ')} title='close' />
                   <div className='pswp__preloader'>
                     <div className='pswp__preloader__icn'>
                       <div className='pswp__preloader__cut'>
@@ -185,6 +186,10 @@ export default class Preview extends Component {
     })
     this.swiper.init()
     window.wxPreview = this.swiper
+    document.querySelector('.pswp__container').addEventListener('click', () => {
+      console.log('xixi')
+      this.swiper.close()
+    })
     this.swiper.listen('close', () => {
       this.props.closeListen()
       window.wxPreview = undefined

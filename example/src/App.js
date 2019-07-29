@@ -15,7 +15,7 @@ export default class App extends Component {
       <div>
 
         {/*method 1*/}
-        <Preview loop={true} bgOpacity={0.95} titleStyle={{color: 'pink'}}>
+        <Preview loop={true} bgOpacity={0.95} titleStyle={{color: 'pink'}} fullClose={true}>
           <div className="gallery">
             <img src="static/preview_1.jpeg" data-preview-proto='static/preview_1_l.jpeg' data-preview-title='Van Gogh' alt='img' />
             <br />
