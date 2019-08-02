@@ -31,7 +31,8 @@ export default class Preview extends Component {
     this.isMobile = () => /Android|webOS|iPhone|iPod|BlackBerry|iPad/i.test(navigator.userAgent)
     this.ref = React.createRef()
     this.state = {
-      list: this.props.list
+      list: this.props.list,
+      active: false
     }
   }
 
@@ -91,6 +92,10 @@ export default class Preview extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    if (window.wxPreview || window.wxPreview) {
+      console.warn('组件已被其他请求激活')
+      return
+    }
     if (this.props.list !== nextProps.list) {
       if (nextProps.list) {
         this.setState({list: nextProps.list})
@@ -115,7 +120,7 @@ export default class Preview extends Component {
 
   geneItem(images) {
     return Promise.all(
-      images.map(async (image, index) => {
+      images.map(async image => {
         let msrc = image.getAttribute('data-preview-src') || image.getAttribute('data-preview-proto')
         let title = image.getAttribute('data-preview-title') || undefined
         if (image.tagName.toLowerCase() === 'img') msrc = image.src || image.getAttribute('data-preview-proto')
@@ -129,7 +134,6 @@ export default class Preview extends Component {
         }
       })
     )
-
   }
 
   async initView() {
@@ -153,9 +157,7 @@ export default class Preview extends Component {
         }
       })
     }
-    window.wxPreviewActive = () => {
-      this.geneView(images, this.props.openButton.index || 0)
-    }
+    window.wxPreviewActive = () => this.geneView(images, this.props.openButton.index || 0)
     if (this.props.openButton) {
       let openButton = document.querySelector(this.props.openButton.dom)
       if (openButton) openButton.onclick = () => this.geneView(images, this.props.openButton.index || 0)
@@ -164,6 +166,11 @@ export default class Preview extends Component {
   }
 
   async geneView(images, index) {
+    if (window.wxPreview || window.wxPreview) {
+      console.warn('已被其他请求激活')
+      return
+    }
+    this.setState({active: true})
     let items = await this.geneItem(images)
     const pswpElement = document.querySelector('.pswp')
     this.swiper = new PhotoSwipe(pswpElement, PhotoSwipeUIDefault, items, {
@@ -186,11 +193,8 @@ export default class Preview extends Component {
     })
     this.swiper.init()
     window.wxPreview = this.swiper
-    document.querySelector('.pswp__container').addEventListener('click', () => {
-      console.log('xixi')
-      this.swiper.close()
-    })
     this.swiper.listen('close', () => {
+      this.setState({active: false})
       this.props.closeListen()
       window.wxPreview = undefined
     })

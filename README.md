@@ -43,24 +43,21 @@ class Example extends Component {
           dom: '.open2',
           index: 1
         }} list={this.state.list} />
-				{/*异步更新数据-JS激活*/}
-        <button className="open2x" onClick={() => {
-          this.setState({list: ['static/preview_2_l.png']})
-          fetch('https://jsonplaceholder.typicode.com/todos/1')
-            .then(response => response.json())
-            .then(() => {
-              window.wxPreviewActive()
-            })
-        }}>open2x
-        </button>
+        
         {/*异步更新数据-JS激活*/}
-        <button className="open2y" onClick={() => {
-          this.setState({list: ['static/preview_4_l.jpg']})
-          setTimeout(() => {
-            window.wxPreviewActive()
-          }, 50)
-        }}>open2y
+        <button onClick={async () => {
+          this.setState({list: await this.getList(this.state.serve[0])})
+          setTimeout(() => window.wxPreviewActive())
+        }}>open3
         </button>
+
+        {/*异步更新数据-JS激活*/}
+        <button onClick={async () => {
+          this.setState({list: await this.getList(this.state.serve[1])})
+          setTimeout(() => window.wxPreviewActive())
+        }}>open4
+        </button>
+        
       </div>
     )
   }
@@ -142,11 +139,27 @@ class Example extends Component {
 </Preview>
 ```
 
+### 异步获取列表时无法对应当前请求
+
+更新列表与激活组件必须异步调用
+
+```javascript
+this.setState({list: await this.getList(this.state.serve[1])})
+setTimeout(() => window.wxPreviewActive())
+```
+
+
+
 ## Requirements
 
 [PhotoSwipe](https://github.com/dimsemenov/PhotoSwipe)
 
 ## Update
+
+### 1.1.6
+
+* 修复连续点击引发的错误
+* 优化异步请求数据时的列表更新机制
 
 ### 1.1.3
 

@@ -17,3 +17,15 @@ body {
 .mount {
   background-image: url('https://farm4.staticflickr.com/3920/15008465772_383e697089_m.jpg');
 }
+
+button {
+  margin-right: 12px;
+  padding: 3px 10px;
+  background: #ccc;
+  color: #fff;
+  border: 0;
+  font-size: 12px;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}

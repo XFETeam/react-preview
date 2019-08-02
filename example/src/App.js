@@ -1,12 +1,14 @@
 import React, {Component} from 'react'
 
 import Preview from 'react-preview'
+import axiso from 'axios'
 
 export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      list: ['static/preview_4_l.jpg', 'static/preview_5_l.png', 'static/preview_1_l.jpeg']
+      list: ['static/preview_4_l.jpg', 'static/preview_5_l.png', 'static/preview_1_l.jpeg'],
+      serve: ['https://test-ws.xoyo.com/jx3/trcarnival190708/get_work_by_id?work_id=1&__ts__=1564744528769&callback=__xfe2', 'http://test-ws.xoyo.com/jx3/trcarnival190708/get_work_by_id?work_id=22&__ts__=1564746489989&callback=__xfe2']
     }
   }
 
@@ -15,7 +17,7 @@ export default class App extends Component {
       <div>
 
         {/*method 1*/}
-        <Preview loop={true} bgOpacity={0.95} titleStyle={{color: 'pink'}} fullClose={true}>
+        <Preview loop={true} bgOpacity={0.95} titleStyle={{color: 'pink'}} fullClose={false}>
           <div className="gallery">
             <img src="static/preview_1.jpeg" data-preview-proto='static/preview_1_l.jpeg' data-preview-title='Van Gogh' alt='img' />
             <br />
@@ -37,25 +39,35 @@ export default class App extends Component {
         }} list={this.state.list} />
 
         <button className="open2">open2</button>
+
+
         {/*异步更新数据-JS激活*/}
-        <button className="open2x" onClick={() => {
-          this.setState({list: ['static/preview_2_l.png']})
-          fetch('https://jsonplaceholder.typicode.com/todos/1')
-            .then(response => response.json())
-            .then(() => {
-              window.wxPreviewActive()
-            })
-        }}>open2x
+        <button onClick={async () => {
+          this.setState({list: await this.getList(this.state.serve[0])})
+          setTimeout(() => window.wxPreviewActive())
+        }}>open3
         </button>
+
         {/*异步更新数据-JS激活*/}
-        <button className="open2y" onClick={() => {
-          this.setState({list: ['static/preview_4_l.jpg']})
-          setTimeout(() => {
-            window.wxPreviewActive()
-          }, 50)
-        }}>open2y
+        <button onClick={async () => {
+          this.setState({list: await this.getList(this.state.serve[1])})
+          setTimeout(() => window.wxPreviewActive())
+        }}>open4
         </button>
       </div>
     )
   }
+
+  getList(port) {
+    return new Promise((resolve) => {
+      axiso.get(port).then(async (res) => {
+        res = res.data.split('__xfe2(')[1].split(');')[0]
+        res = JSON.parse(res)
+        res = res.data.works_list
+        res = await Promise.all(res.map(e => e.image_url))
+        resolve(res)
+      })
+    })
+  }
+
 }
