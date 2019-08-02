@@ -31,8 +31,7 @@ export default class Preview extends Component {
     this.isMobile = () => /Android|webOS|iPhone|iPod|BlackBerry|iPad/i.test(navigator.userAgent)
     this.ref = React.createRef()
     this.state = {
-      list: this.props.list,
-      active: false
+      list: this.props.list
     }
   }
 
@@ -92,7 +91,7 @@ export default class Preview extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (window.wxPreview || window.wxPreview) {
+    if (window.wxPreview) {
       console.warn('组件已被其他请求激活')
       return
     }
@@ -134,6 +133,7 @@ export default class Preview extends Component {
         }
       })
     )
+
   }
 
   async initView() {
@@ -166,11 +166,10 @@ export default class Preview extends Component {
   }
 
   async geneView(images, index) {
-    if (window.wxPreview || window.wxPreview) {
+    if (window.wxPreview) {
       console.warn('已被其他请求激活')
       return
     }
-    this.setState({active: true})
     let items = await this.geneItem(images)
     const pswpElement = document.querySelector('.pswp')
     this.swiper = new PhotoSwipe(pswpElement, PhotoSwipeUIDefault, items, {
